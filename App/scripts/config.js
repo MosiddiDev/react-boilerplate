@@ -63,48 +63,72 @@ var CONFIG = {
                 phone: "321-543-3568"
             },
             {
-                name: "Taco Bell",
-                phone: "432-573-7568"
-            }
-        ]
-    },
-
-    data: {
-        books: [
-            {
-                title: "Oliver Twist",
-                year: 1923,
-                author: "Mosiddi"
+                name: "Tiki Taka",
+                phone: "436-456-5463"
             },
             {
-                title: "Quran",
-                year: 610,
-                author: "Allah"
+                name: "Earth Moon",
+                phone: "325-542-2345"
             },
             {
-                title: "Yolo",
-                year: 2016,
-                author: "IDGAF"
+                name: "Jessica Jones",
+                phone: "234-434-4532"
             },
             {
-                title: "The Fire Next Time",
-                year: 2016,
-                author: "James Baldwin"
+                name: "Dare Devil",
+                phone: "234-579-6573"
             },
             {
-                title: "Superstar",
-                year: 2012,
-                author: "Steph Curry"
+                name: "Super Sayian",
+                phone: "352-876-2342"
             },
             {
-                title: "Life",
-                year: 2011,
-                author: "Iggy"
+                name: "Gone Baby",
+                phone: "453-567-7542"
             },
             {
-                title: "Take Care",
-                year: 1999,
-                author: "Drake"
+                name: "Ricky Tiki",
+                phone: "435-434-6443"
+            },
+            {
+                name: "Silent Hill",
+                phone: "120-219-1273"
+            },
+            {
+                name: "Gerald",
+                phone: "131-423-1245"
+            },
+            {
+                name: "Mickey Mouse",
+                phone: "324-354-2345"
+            },
+            {
+                name: "Burger King",
+                phone: "134-123-3135"
+            },
+            {
+                name: "Wendy's",
+                phone: "355-345-1245"
+            },
+            {
+                name: "Steak & Shake",
+                phone: "345-543-7675"
+            },
+            {
+                name: "Donal Duck",
+                phone: "431-432-4678"
+            },
+            {
+                name: "Pluto",
+                phone: "103-134-0283"
+            },
+            {
+                name: "Mars",
+                phone: "467-746-5674"
+            },
+            {
+                name: "Jupiter Jone",
+                phone: "243-532-7557"
             }
         ]
     }

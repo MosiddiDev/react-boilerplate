@@ -64,6 +64,7 @@ var FilteredList = React.createClass({
 
                 // true if the any property contains the value of the searchString
                 if(propertyValue.indexOf(searchString) > -1){
+                    // Add listItem to filteredList and break from inner loop
                     filteredList.push(listItem);
                     break;
                 }
@@ -75,18 +76,27 @@ var FilteredList = React.createClass({
 
     renderPaginationFooter: function(){
         var filteredList = this.filteredList();
-        var numberOfPages = Math.ceil(filteredList.length / this.props.listItemsPerPage);
+        var totalNumberOfListItems = filteredList.length;
+        var listItemsPerPage = this.props.listItemsPerPage;
+        var numberOfVisibleListItems = this.state.visibleList.length;
+        var numberOfPages = Math.ceil(totalNumberOfListItems / listItemsPerPage);
+        var firstVisbleListItem = (this.state.activePage - 1) * listItemsPerPage + 1;
+        var lastVisibleListItem = firstVisbleListItem + numberOfVisibleListItems - 1;
+        var paginationStatus = `${firstVisbleListItem}-${lastVisibleListItem} of ${totalNumberOfListItems}`;
 
         return (
-            <Pagination
-                prev
-                next
-                ellipsis
-                boundaryLinks
-                items={numberOfPages}
-                maxButtons={5}
-                activePage={this.state.activePage}
-                onSelect={this.pageSelect} />
+            <div>
+                <div>{ paginationStatus }</div>
+                <Pagination
+                    prev
+                    next
+                    ellipsis
+                    boundaryLinks
+                    items={numberOfPages}
+                    maxButtons={3}
+                    activePage={this.state.activePage}
+                    onSelect={this.pageSelect} />
+            </div>
         );
     },
 
@@ -100,8 +110,8 @@ var FilteredList = React.createClass({
 
             listItemProps.push(
                 <div>
-                    <b>{propName}:  </b>
-                    <span>{propValue}</span>
+                    <b>{ propName }:  </b>
+                    <span>{ propValue }</span>
                 </div>
             );
         }
@@ -110,8 +120,11 @@ var FilteredList = React.createClass({
     },
 
     renderListItem(listItem, index) {
+        var numberInList = (this.state.activePage - 1) * this.props.listItemsPerPage + (index + 1);
+
         return (
             <ListGroupItem>
+                <b>{ numberInList }</b>
                 { this.renderListItemProperties(listItem) }
             </ListGroupItem>
         );
@@ -131,7 +144,7 @@ var FilteredList = React.createClass({
             </div>
         );
     }
-    
+
 });
 
 module.exports = FilteredList;
