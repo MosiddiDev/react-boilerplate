@@ -1,6 +1,6 @@
 import React from 'react';
 var FilteredList = require('../Components/FilteredList');
-var {contact} = require('../config');
+var {contact, data} = require('../config');
 
 var Contact = React.createClass({
 

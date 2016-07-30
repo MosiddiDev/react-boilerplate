@@ -10,13 +10,11 @@ import About from './Views/About';
 import Contact from './Views/Contact';
 
 var routes = (
-    <Router>
-        <Route path="/" component={AppHeader}>
-            <IndexRoute component={Home} />
-            <Route path="about" component={About}/>
-            <Route path="contact" component={Contact}/>
-        </Route>
-    </Router>
+  <Route path="/" component={AppHeader}>
+    <IndexRoute component={Home} />
+    <Route path="about" component={About}/>
+    <Route path="contact" component={Contact}/>
+  </Route>
 );
 
-ReactDOM.render(routes, document.body);
+ReactDOM.render(<Router>{routes}</Router>, document.body);
